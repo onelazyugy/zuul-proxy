@@ -1,0 +1,18 @@
+server:
+  port: 8111
+  servlet:
+    context-path: /zuul
+spring:
+  application:
+    name: zuulserver
+
+zuul:
+  routes:
+    productservice:
+      url: http://localhost:8222/
+    bookservice:
+      url: http://localhost:8333/
+
+ribbon:
+  eureka:
+    enabled: false
